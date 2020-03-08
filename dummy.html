@@ -1,0 +1,224 @@
+<!-- ##############################################################################################- -->
+      <!-- ################################# GIOCATORE 3 ##################################################- -->
+      <!-- ##############################################################################################- -->
+      <div class="col-lg-3 col-md-4 col-xs-6" id="giocatore3">
+        <h3  class="nome_giocatore" id="nome_3">giocatore 3</h3>
+        <div class="pg_box">
+
+			<!-- header giocatore -->
+			<div class="tot_header">
+				<p>Tot   &gt;&gt;   <span id="tot_tot_3"></span>  su  <span id="  eggio_3"></span></p>
+			</div>
+
+          <div class="row">
+            <div class="col-6">
+              <p id="tempo_libero_3">tempo libero</p>
+            </div>
+            <div class="col-6">
+              <div class="row pulsanti  justify-content-beginning">
+                <button  id="piu_tempo_libero_3" type="button" class="btn btn-outline-success btn-sm" onClick="modifica_punteggio(g3, 'somma', 'tempo_libero')">+ 3</button>
+                <button  id="meno_tempo_libero_3" type="button" class="btn btn-outline-danger btn-sm" onClick="modifica_punteggio(g3, 'sottrazione', 'tempo_libero')">- 3</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p id="salario_3">salario</p>
+            </div>
+            <div class="col-6">
+              <div class="row pulsanti  justify-content-beginning">
+                <button  id="piu_salario_3" type="button" class="btn btn-outline-success btn-sm" onClick="modifica_punteggio(g3, 'somma', 'salario')">+ 3</button>
+                <button  id="meno_salario_3" type="button" class="btn btn-outline-danger btn-sm" onClick="modifica_punteggio(g3, 'sottrazione', 'salario')">- 3</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p id="punteggio_3">punteggio</p>
+            </div>
+            <div class="col-6">
+              <div class="row pulsanti justify-content-beginning">
+                <button  id="piu_punteggio_3" type="button" class="btn btn-outline-success btn-sm" onClick="modifica_punteggio(g3, 'somma', 'punteggio')">+ 3</button>
+                <button  id="meno_punteggio_3" type="button" class="btn btn-outline-danger btn-sm" onClick="modifica_punteggio(g3, 'sottrazione', 'punteggio')">- 3</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="persona_box">
+		<!-- header di oggetti -->
+		  <div class="per_header">
+			  <p>Tot Persone   &gt;&gt;   <span id="tot_persone_3"></span></p>
+		  </div>
+          <div class="row">
+            <div class="col-6">
+              <p id="persona_ok_3">P. buona</p>
+            </div>
+            <div class="col-6">
+              <div class="row pulsanti justify-content-beginning">
+                <button type="button" class="btn btn-outline-success btn-sm" onClick="modifica_persona(g3, 'somma', 'persona_ok')">+ 3</button>
+                <button type="button" class="btn btn-outline-danger btn-sm" onClick="modifica_persona(g3, 'sottrazione', 'persona_ok')">- 3</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p id="persona_no_3">P. cattiva</p>
+            </div>
+            <div class="col-6">
+              <div class="row pulsanti justify-content-beginning">
+                <button type="button" class="btn btn-outline-success btn-sm" onClick="modifica_persona(g3, 'somma', 'persona_no')">+ 3</button>
+                <button  type="button" class="btn btn-outline-danger btn-sm" onClick="modifica_persona(g3, 'sottrazione', 'persona_no')">- 3</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+        <!--  inizio oggetti-->
+        <div class="oggetti_box">
+
+		<!-- header di oggetti -->
+		  <div class="ogg_header">
+			  <p>Tot Oggetti   &gt;&gt;   <span id="tot_oggetti_3"></span></p>
+		  </div>
+
+		  <div class="row">
+            <div class="col-6">
+              <p id="sigarette_3">oggetti</p>
+            </div>
+            <div class="col-6">
+              <div class="row pulsanti justify-content-beginning">
+                <button  id="piu_sigarette_3" type="button" class="btn btn-outline-success btn-sm" onClick="modifica_oggetti(g3, 'somma', 'sigarette')">+ 3</button>
+                <button  id="meno_sigarette_3" type="button" class="btn btn-outline-danger btn-sm" onClick="modifica_oggetti(g3, 'sottrazione', 'sigarette')">- 3</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p id="alcool_3">oggetti</p>
+            </div>
+            <div class="col-6">
+              <div class="row pulsanti justify-content-beginning">
+                <button  id="piu_alcool_3" type="button" class="btn btn-outline-success btn-sm" onClick="modifica_oggetti(g3, 'somma', 'alcool')">+ 3</button>
+                <button  id="meno_alcool_3" type="button" class="btn btn-outline-danger btn-sm" onClick="modifica_oggetti(g3, 'sottrazione', 'alcool')">- 3</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p id="cibo_3">oggetti</p>
+            </div>
+            <div class="col-6">
+              <div class="row pulsanti justify-content-beginning">
+                <button  id="piu_cibo_3" type="button" class="btn btn-outline-success btn-sm" onClick="modifica_oggetti(g3, 'somma', 'cibo')">+ 3</button>
+                <button  id="meno_cibo_3" type="button" class="btn btn-outline-danger btn-sm" onClick="modifica_oggetti(g3, 'sottrazione', 'cibo')">- 3</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p id="libri_3">oggetti</p>
+            </div>
+            <div class="col-6">
+              <div class="row pulsanti justify-content-beginning">
+                <button  id="piu_libri_3" type="button" class="btn btn-outline-success btn-sm" onClick="modifica_oggetti(g3, 'somma', 'libri')">+ 3</button>
+                <button  id="meno_libri_3" type="button" class="btn btn-outline-danger btn-sm" onClick="modifica_oggetti(g3, 'sottrazione', 'libri')">- 3</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p id="erba_3">oggetti</p>
+            </div>
+            <div class="col-6">
+              <div class="row pulsanti justify-content-beginning">
+                <button  id="piu_erba_3" type="button" class="btn btn-outline-success btn-sm" onClick="modifica_oggetti(g3, 'somma', 'erba')">+ 3</button>
+                <button  id="meno_erba_3" type="button" class="btn btn-outline-danger btn-sm" onClick="modifica_oggetti(g3, 'sottrazione', 'erba')">- 3</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p id="altro_oggetto_3">oggetti</p>
+            </div>
+            <div class="col-6">
+              <div class="row pulsanti justify-content-beginning">
+                <button  id="piu_altro_oggetto_3" type="button" class="btn btn-outline-success btn-sm" onClick="modifica_oggetti(g3, 'somma', 'altro_oggetto')">+ 3</button>
+                <button  id="meno_altro_oggetto_3" type="button" class="btn btn-outline-danger btn-sm" onClick="modifica_oggetti(g3, 'sottrazione', 'altro_oggetto')">- 3</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  fine oggetti-->
+
+        <!--  inizio attivita-->
+        <div class="attivita_box">
+
+		<!-- header di attivita -->
+          <div class="att_header">
+              <p>Tot Attivita   &gt;&gt;   <span id="tot_attivita_3"></span></p>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <p id="sonno_3">sonno</p>
+            </div>
+            <div class="col-6">
+              <div class="row pulsanti justify-content-beginning">
+                <button  id="piu_sonno_3" type="button" class="btn btn-outline-success btn-sm" onClick="modifica_attivita(g3, 'somma', 'sonno')">+ 3</button>
+                <button  id="meno_sonno_3" type="button" class="btn btn-outline-danger btn-sm" onClick="modifica_attivita(g3, 'sottrazione', 'sonno')">- 3</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p id="tv_3">tv</p>
+            </div>
+            <div class="col-6">
+              <div class="row pulsanti justify-content-beginning">
+                <button  id="piu_oggetti_3" type="button" class="btn btn-outline-success btn-sm" onClick="modifica_attivita(g3, 'somma', 'tv')">+ 3</button>
+                <button  id="meno_oggetti_3" type="button" class="btn btn-outline-danger btn-sm" onClick="modifica_attivita(g3, 'sottrazione', 'tv')">- 3</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p id="sveltina_3">sveltina</p>
+            </div>
+            <div class="col-6">
+              <div class="row pulsanti justify-content-beginning">
+                <button  id="piu_oggetti_3" type="button" class="btn btn-outline-success btn-sm" onClick="modifica_attivita(g3, 'somma', 'sveltina')">+ 3</button>
+                <button  id="meno_oggetti_3" type="button" class="btn btn-outline-danger btn-sm" onClick="modifica_attivita(g3, 'sottrazione', 'sveltina')">- 3</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p id="gdr_3">GDR</p>
+            </div>
+            <div class="col-6">
+              <div class="row pulsanti justify-content-beginning">
+                <button  id="piu_oggetti_3" type="button" class="btn btn-outline-success btn-sm" onClick="modifica_attivita(g3, 'somma', 'gdr')">+ 3</button>
+                <button  id="meno_oggetti_3" type="button" class="btn btn-outline-danger btn-sm" onClick="modifica_attivita(g3, 'sottrazione', 'gdr')">- 3</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p id="altra_attivita_3">Altro</p>
+            </div>
+            <div class="col-6">
+              <div class="row pulsanti justify-content-beginning">
+                <button  type="button" class="btn btn-outline-success btn-sm" onClick="modifica_attivita(g3, 'somma', 'altra_attivita')">+ 3</button>
+                <button  type="button" class="btn btn-outline-danger btn-sm" onClick="modifica_attivita(g3, 'sottrazione', 'altra_attivita')">- 3</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  fine attivita_3-->
+
+      </div>

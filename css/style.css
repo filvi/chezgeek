@@ -1,0 +1,164 @@
+.container {
+  margin-top: 10px;
+}
+p {
+  margin-bottom:1px;
+}
+.nome_giocatore {
+  font-family: Bangers;
+  font-size: 1.5em;
+  color: #f3f3f3;
+  text-shadow: 1px 1px 1px rgba(166, 166, 166, 0.8);
+  text-align: center;
+}
+
+.pulsanti {
+margin: 0 10px;
+
+}
+
+
+.bio, .ogg, .att, .persona{
+    font-weight: 700;
+    text-align: left;
+    padding-left: 15px;
+}
+
+p{
+  font-family: Poppins;
+}
+
+
+
+
+
+
+
+/* sdfsd */
+
+
+
+.ogg_header {
+	background-color: #5E69D1;
+}
+
+
+.tot_header{
+	background-color: #973CBE;
+}
+
+
+/* sdfsdfjn */
+
+.ogg_header, .tot_header, .att_header, .per_header{
+  color:white;
+  font-size: 1,1emem;
+  text-transform: uppercase;
+}
+
+.per_header{
+  background-color: #54A955;
+}
+
+.attivita, .attivita_box button, .att{
+    color:#FF614E;
+}
+.att_header{
+  background-color: #FF614E;
+
+}
+
+.attivita_box{
+  border-color:#FF614E;
+}
+
+.persona, .persona_box button,.persona_box{
+  color:#54A955;
+}
+
+
+.oggetti, .oggetti_box, .oggetti_box button{
+color: #5E69D1;
+}
+.bio, .pg_box button, .pg_box{
+
+  color: #973CBE!important;
+}
+.pg_box{
+  border-color: #973CBE;
+}
+.bio, .ogg, .att, .persona{
+  padding-right: 15px;
+  min-width:100%;
+}
+
+.erpunteggio{
+  font-weight: bold;
+  font-size: 1em;
+  color:#414141;
+}
+
+.col-3{
+  padding:0%!important;
+  padding-right:10px!important;
+}
+
+
+
+.col-9 p{
+  text-align: right;
+  padding:0px;
+}
+
+
+.oggetti_box, .attivita_box , .pg_box, .persona_box{
+  margin:5px 0;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+
+button{
+    background-color: transparent!important;
+    border: none;
+    /* color:white; */
+    padding: 2px;
+}
+
+
+/* button i {
+  width:100%;
+  height:100%;
+} */
+
+
+.mybutton{
+  border-radius:50%;
+  vertical-align: middle;
+}
+
+.att_header, .ogg_header, .per_header, .tot_header{
+	padding-top:0px!important;
+	text-align: center;
+  margin:0px 0px 5px 0px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+
+
+html, body{
+  background-color: #343A40;
+}
+
+
+.pg_box, .attivita_box, .oggetti_box, .persona_box{
+  background-color: #f3f3f3;
+}
+
+
+.navbar{
+  padding:5px;
+}
+

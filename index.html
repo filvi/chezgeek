@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Chez Geek</title>
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Poppins" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/bootstrap-grid.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="navbar-nav navbar">
+    <ul>
+      <input type="button" class="btn btn-outline-light" value="Imposta Giocatore 1" onClick="imposta_giocatore(0)">
+      <input type="button" class="btn btn-outline-light" value="Imposta Giocatore 2" onClick="imposta_giocatore(1)">
+      <input type="button" class="btn btn-outline-light" value="Imposta Giocatore 3" onClick="imposta_giocatore(2)">
+      <input type="button" class="btn btn-outline-light" value="Imposta Giocatore 4" onClick="imposta_giocatore(3)">
+      <input type="button" style="margin-left:25px;" class="btn btn-outline-light" value="Fullscreen" onClick="gofullscreen()">
+      <input type="button" style="margin-left:5px;" class="btn btn-outline-light" value="Resetta tutto" onClick="window.location.reload()">
+      <a  target="_blank" href="chezgeek_regole.pdf" style="margin-left:5px;" class="btn btn-outline-light">Manuale gioco</a>
+    </ul>
+  </div>
+  <!-- Page Content -->
+  <div class="container" id="container">
+        <div class="row text-center text-lg-left">
+      <!-- ##############################################################################################- -->
+      <!-- ################################# GIOCATORE 0 ##################################################- -->
+      <!-- ##############################################################################################- -->
+      <div class="col-lg-3 col-md-4 col-xs-6" id="giocatore0">
+        <h1 class="nome_giocatore" id="nome_0">giocatore 1</h1>
+        <div class="pg_box">
+
+          <!-- header giocatore -->
+          <div class="tot_header">
+            <p>Tot -&gt; <span id="tot_tot_0"></span> su <span id="cazzeggio_0"></span></p>
+          </div>
+
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="tempo_libero_0">tempo libero</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti  justify-content-end">
+                <button id="piu_tempo_libero_0" type="button" class="mybutton" onClick="modifica_punteggio(g0, 'somma', 'tempo_libero')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_tempo_libero_0" type="button" class="mybutton" onClick="modifica_punteggio(g0, 'sottrazione', 'tempo_libero')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="salario_0">salario</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti  justify-content-end">
+                <button id="piu_salario_0" type="button" class="mybutton" onClick="modifica_punteggio(g0, 'somma', 'salario')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_salario_0" type="button" class="mybutton" onClick="modifica_punteggio(g0, 'sottrazione', 'salario')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="punteggio_0">punteggio</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_punteggio_0" type="button" class="mybutton" onClick="modifica_punteggio(g0, 'somma', 'punteggio')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_punteggio_0" type="button" class="mybutton" onClick="modifica_punteggio(g0, 'sottrazione', 'punteggio')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="persona_box">
+          <!-- header di oggetti -->
+          <div class="per_header">
+            <p>Tot Persone -&gt; <span id="tot_persone_0"></span></p>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="persona_ok_0">P. buona</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button type="button" class="mybutton" onClick="modifica_persona(g0, 'somma', 'persona_ok')"><i class="fas fa-plus-circle"></i></button>
+                <button type="button" class="mybutton" onClick="modifica_persona(g0, 'sottrazione', 'persona_ok')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="persona_no_0">P. cattiva</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button type="button" class="mybutton" onClick="modifica_persona(g0, 'somma', 'persona_no')"><i class="fas fa-plus-circle"></i></button>
+                <button type="button" class="mybutton" onClick="modifica_persona(g0, 'sottrazione', 'persona_no')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+        <!--  inizio oggetti-->
+        <div class="oggetti_box">
+
+          <!-- header di oggetti -->
+          <div class="ogg_header">
+            <p>Tot Oggetti -&gt; <span id="tot_oggetti_0"></span></p>
+          </div>
+
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="sigarette_0">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_sigarette_0" type="button" class="mybutton" onClick="modifica_oggetti(g0, 'somma', 'sigarette')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_sigarette_0" type="button" class="mybutton" onClick="modifica_oggetti(g0, 'sottrazione', 'sigarette')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="alcool_0">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_alcool_0" type="button" class="mybutton" onClick="modifica_oggetti(g0, 'somma', 'alcool')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_alcool_0" type="button" class="mybutton" onClick="modifica_oggetti(g0, 'sottrazione', 'alcool')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="cibo_0">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_cibo_0" type="button" class="mybutton" onClick="modifica_oggetti(g0, 'somma', 'cibo')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_cibo_0" type="button" class="mybutton" onClick="modifica_oggetti(g0, 'sottrazione', 'cibo')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="libri_0">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_libri_0" type="button" class="mybutton" onClick="modifica_oggetti(g0, 'somma', 'libri')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_libri_0" type="button" class="mybutton" onClick="modifica_oggetti(g0, 'sottrazione', 'libri')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="erba_0">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_erba_0" type="button" class="mybutton" onClick="modifica_oggetti(g0, 'somma', 'erba')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_erba_0" type="button" class="mybutton" onClick="modifica_oggetti(g0, 'sottrazione', 'erba')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="altro_oggetto_0">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_altro_oggetto_0" type="button" class="mybutton" onClick="modifica_oggetti(g0, 'somma', 'altro_oggetto')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_altro_oggetto_0" type="button" class="mybutton" onClick="modifica_oggetti(g0, 'sottrazione', 'altro_oggetto')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  fine oggetti-->
+
+        <!--  inizio attivita-->
+        <div class="attivita_box">
+
+          <!-- header di attivita -->
+          <div class="att_header">
+            <p>Tot Attivita -&gt; <span id="tot_attivita_0"></span></p>
+          </div>
+
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="sonno_0">sonno</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_sonno_0" type="button" class="mybutton" onClick="modifica_attivita(g0, 'somma', 'sonno')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_sonno_0" type="button" class="mybutton" onClick="modifica_attivita(g0, 'sottrazione', 'sonno')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="tv_0">tv</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_oggetti_0" type="button" class="mybutton" onClick="modifica_attivita(g0, 'somma', 'tv')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_oggetti_0" type="button" class="mybutton" onClick="modifica_attivita(g0, 'sottrazione', 'tv')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="sveltina_0">sveltina</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_oggetti_0" type="button" class="mybutton" onClick="modifica_attivita(g0, 'somma', 'sveltina')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_oggetti_0" type="button" class="mybutton" onClick="modifica_attivita(g0, 'sottrazione', 'sveltina')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="gdr_0">GDR</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_oggetti_0" type="button" class="mybutton" onClick="modifica_attivita(g0, 'somma', 'gdr')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_oggetti_0" type="button" class="mybutton" onClick="modifica_attivita(g0, 'sottrazione', 'gdr')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="altra_attivita_0">Altro</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button type="button" class="mybutton" onClick="modifica_attivita(g0, 'somma', 'altra_attivita')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button type="button" class="mybutton" onClick="modifica_attivita(g0, 'sottrazione', 'altra_attivita')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  fine attivita_0-->
+
+      </div>
+      <!-- ##############################################################################################- -->
+      <!-- ################################# GIOCATORE 1 ##################################################- -->
+      <!-- ##############################################################################################- -->
+      <div class="col-lg-3 col-md-4 col-xs-6" id="giocatore1">
+        <h1 class="nome_giocatore" id="nome_1">giocatore 1</h1>
+        <div class="pg_box">
+
+          <!-- header giocatore -->
+          <div class="tot_header">
+            <p>Tot -&gt; <span id="tot_tot_1"></span> su <span id="cazzeggio_1"></span></p>
+          </div>
+
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="tempo_libero_1">tempo libero</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti  justify-content-end">
+                <button id="piu_tempo_libero_1" type="button" class="mybutton" onClick="modifica_punteggio(g1, 'somma', 'tempo_libero')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_tempo_libero_1" type="button" class="mybutton" onClick="modifica_punteggio(g1, 'sottrazione', 'tempo_libero')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="salario_1">salario</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti  justify-content-end">
+                <button id="piu_salario_1" type="button" class="mybutton" onClick="modifica_punteggio(g1, 'somma', 'salario')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_salario_1" type="button" class="mybutton" onClick="modifica_punteggio(g1, 'sottrazione', 'salario')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="punteggio_1">punteggio</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_punteggio_1" type="button" class="mybutton" onClick="modifica_punteggio(g1, 'somma', 'punteggio')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_punteggio_1" type="button" class="mybutton" onClick="modifica_punteggio(g1, 'sottrazione', 'punteggio')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="persona_box">
+          <!-- header di oggetti -->
+          <div class="per_header">
+            <p>Tot Persone -&gt; <span id="tot_persone_1"></span></p>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="persona_ok_1">P. buona</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button type="button" class="mybutton" onClick="modifica_persona(g1, 'somma', 'persona_ok')"><i class="fas fa-plus-circle"></i></button>
+                <button type="button" class="mybutton" onClick="modifica_persona(g1, 'sottrazione', 'persona_ok')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="persona_no_1">P. cattiva</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button type="button" class="mybutton" onClick="modifica_persona(g1, 'somma', 'persona_no')"><i class="fas fa-plus-circle"></i></button>
+                <button type="button" class="mybutton" onClick="modifica_persona(g1, 'sottrazione', 'persona_no')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--  inizio oggetti-->
+        <div class="oggetti_box">
+
+          <!-- header di oggetti -->
+          <div class="ogg_header">
+            <p>Tot Oggetti -&gt; <span id="tot_oggetti_1"></span></p>
+          </div>
+
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="sigarette_1">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_sigarette_1" type="button" class="mybutton" onClick="modifica_oggetti(g1, 'somma', 'sigarette')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_sigarette_1" type="button" class="mybutton" onClick="modifica_oggetti(g1, 'sottrazione', 'sigarette')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="alcool_1">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_alcool_1" type="button" class="mybutton" onClick="modifica_oggetti(g1, 'somma', 'alcool')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_alcool_1" type="button" class="mybutton" onClick="modifica_oggetti(g1, 'sottrazione', 'alcool')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="cibo_1">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_cibo_1" type="button" class="mybutton" onClick="modifica_oggetti(g1, 'somma', 'cibo')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_cibo_1" type="button" class="mybutton" onClick="modifica_oggetti(g1, 'sottrazione', 'cibo')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="libri_1">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_libri_1" type="button" class="mybutton" onClick="modifica_oggetti(g1, 'somma', 'libri')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_libri_1" type="button" class="mybutton" onClick="modifica_oggetti(g1, 'sottrazione', 'libri')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="erba_1">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_erba_1" type="button" class="mybutton" onClick="modifica_oggetti(g1, 'somma', 'erba')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_erba_1" type="button" class="mybutton" onClick="modifica_oggetti(g1, 'sottrazione', 'erba')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="altro_oggetto_1">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_altro_oggetto_1" type="button" class="mybutton" onClick="modifica_oggetti(g1, 'somma', 'altro_oggetto')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_altro_oggetto_1" type="button" class="mybutton" onClick="modifica_oggetti(g1, 'sottrazione', 'altro_oggetto')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  fine oggetti-->
+
+        <!--  inizio attivita-->
+        <div class="attivita_box">
+
+          <!-- header di attivita -->
+          <div class="att_header">
+            <p>Tot Attivita -&gt; <span id="tot_attivita_1"></span></p>
+          </div>
+
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="sonno_1">sonno</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_sonno_1" type="button" class="mybutton" onClick="modifica_attivita(g1, 'somma', 'sonno')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_sonno_1" type="button" class="mybutton" onClick="modifica_attivita(g1, 'sottrazione', 'sonno')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="tv_1">tv</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_oggetti_1" type="button" class="mybutton" onClick="modifica_attivita(g1, 'somma', 'tv')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_oggetti_1" type="button" class="mybutton" onClick="modifica_attivita(g1, 'sottrazione', 'tv')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="sveltina_1">sveltina</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_oggetti_1" type="button" class="mybutton" onClick="modifica_attivita(g1, 'somma', 'sveltina')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_oggetti_1" type="button" class="mybutton" onClick="modifica_attivita(g1, 'sottrazione', 'sveltina')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="gdr_1">GDR</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_oggetti_1" type="button" class="mybutton" onClick="modifica_attivita(g1, 'somma', 'gdr')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_oggetti_1" type="button" class="mybutton" onClick="modifica_attivita(g1, 'sottrazione', 'gdr')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="altra_attivita_1">Altro</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button type="button" class="mybutton" onClick="modifica_attivita(g1, 'somma', 'altra_attivita')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button type="button" class="mybutton" onClick="modifica_attivita(g1, 'sottrazione', 'altra_attivita')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  fine attivita_1-->
+
+      </div>
+
+      <!-- ##############################################################################################- -->
+      <!-- ################################# GIOCATORE 2 ##################################################- -->
+      <!-- ##############################################################################################- -->
+      <div class="col-lg-3 col-md-4 col-xs-6" id="giocatore2">
+        <h2 class="nome_giocatore" id="nome_2">giocatore 2</h2>
+        <div class="pg_box">
+
+          <!-- header giocatore -->
+          <div class="tot_header">
+            <p>Tot -&gt; <span id="tot_tot_2"></span> su <span id="cazzeggio_2"></span></p>
+          </div>
+
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="tempo_libero_2">tempo libero</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti  justify-content-end">
+                <button id="piu_tempo_libero_2" type="button" class="mybutton" onClick="modifica_punteggio(g2, 'somma', 'tempo_libero')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_tempo_libero_2" type="button" class="mybutton" onClick="modifica_punteggio(g2, 'sottrazione', 'tempo_libero')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="salario_2">salario</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti  justify-content-end">
+                <button id="piu_salario_2" type="button" class="mybutton" onClick="modifica_punteggio(g2, 'somma', 'salario')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_salario_2" type="button" class="mybutton" onClick="modifica_punteggio(g2, 'sottrazione', 'salario')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="punteggio_2">punteggio</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_punteggio_2" type="button" class="mybutton" onClick="modifica_punteggio(g2, 'somma', 'punteggio')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_punteggio_2" type="button" class="mybutton" onClick="modifica_punteggio(g2, 'sottrazione', 'punteggio')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="persona_box">
+          <!-- header di oggetti -->
+          <div class="per_header">
+            <p>Tot Persone -&gt; <span id="tot_persone_2"></span></p>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="persona_ok_2">P. buona</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button type="button" class="mybutton" onClick="modifica_persona(g2, 'somma', 'persona_ok')"><i class="fas fa-plus-circle"></i></button>
+                <button type="button" class="mybutton" onClick="modifica_persona(g2, 'sottrazione', 'persona_ok')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="persona_no_2">P. cattiva</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button type="button" class="mybutton" onClick="modifica_persona(g2, 'somma', 'persona_no')"><i class="fas fa-plus-circle"></i></button>
+                <button type="button" class="mybutton" onClick="modifica_persona(g2, 'sottrazione', 'persona_no')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+        <!--  inizio oggetti-->
+        <div class="oggetti_box">
+
+          <!-- header di oggetti -->
+          <div class="ogg_header">
+            <p>Tot Oggetti -&gt; <span id="tot_oggetti_2"></span></p>
+          </div>
+
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="sigarette_2">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_sigarette_2" type="button" class="mybutton" onClick="modifica_oggetti(g2, 'somma', 'sigarette')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_sigarette_2" type="button" class="mybutton" onClick="modifica_oggetti(g2, 'sottrazione', 'sigarette')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="alcool_2">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_alcool_2" type="button" class="mybutton" onClick="modifica_oggetti(g2, 'somma', 'alcool')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_alcool_2" type="button" class="mybutton" onClick="modifica_oggetti(g2, 'sottrazione', 'alcool')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="cibo_2">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_cibo_2" type="button" class="mybutton" onClick="modifica_oggetti(g2, 'somma', 'cibo')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_cibo_2" type="button" class="mybutton" onClick="modifica_oggetti(g2, 'sottrazione', 'cibo')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="libri_2">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_libri_2" type="button" class="mybutton" onClick="modifica_oggetti(g2, 'somma', 'libri')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_libri_2" type="button" class="mybutton" onClick="modifica_oggetti(g2, 'sottrazione', 'libri')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="erba_2">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_erba_2" type="button" class="mybutton" onClick="modifica_oggetti(g2, 'somma', 'erba')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_erba_2" type="button" class="mybutton" onClick="modifica_oggetti(g2, 'sottrazione', 'erba')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="altro_oggetto_2">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_altro_oggetto_2" type="button" class="mybutton" onClick="modifica_oggetti(g2, 'somma', 'altro_oggetto')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_altro_oggetto_2" type="button" class="mybutton" onClick="modifica_oggetti(g2, 'sottrazione', 'altro_oggetto')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  fine oggetti-->
+
+        <!--  inizio attivita-->
+        <div class="attivita_box">
+
+          <!-- header di attivita -->
+          <div class="att_header">
+            <p>Tot Attivita -&gt; <span id="tot_attivita_2"></span></p>
+          </div>
+
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="sonno_2">sonno</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_sonno_2" type="button" class="mybutton" onClick="modifica_attivita(g2, 'somma', 'sonno')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_sonno_2" type="button" class="mybutton" onClick="modifica_attivita(g2, 'sottrazione', 'sonno')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="tv_2">tv</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_oggetti_2" type="button" class="mybutton" onClick="modifica_attivita(g2, 'somma', 'tv')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_oggetti_2" type="button" class="mybutton" onClick="modifica_attivita(g2, 'sottrazione', 'tv')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="sveltina_2">sveltina</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_oggetti_2" type="button" class="mybutton" onClick="modifica_attivita(g2, 'somma', 'sveltina')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_oggetti_2" type="button" class="mybutton" onClick="modifica_attivita(g2, 'sottrazione', 'sveltina')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="gdr_2">GDR</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_oggetti_2" type="button" class="mybutton" onClick="modifica_attivita(g2, 'somma', 'gdr')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_oggetti_2" type="button" class="mybutton" onClick="modifica_attivita(g2, 'sottrazione', 'gdr')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="altra_attivita_2">Altro</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button type="button" class="mybutton" onClick="modifica_attivita(g2, 'somma', 'altra_attivita')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button type="button" class="mybutton" onClick="modifica_attivita(g2, 'sottrazione', 'altra_attivita')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  fine attivita_2-->
+
+      </div>
+
+
+
+      <!-- ##############################################################################################- -->
+      <!-- ################################# GIOCATORE 3 ##################################################- -->
+      <!-- ##############################################################################################- -->
+      <div class="col-lg-3 col-md-4 col-xs-6" id="giocatore3">
+        <h3 class="nome_giocatore" id="nome_3">giocatore 3</h3>
+        <div class="pg_box">
+
+          <!-- header giocatore -->
+          <div class="tot_header">
+            <p>Tot -&gt; <span id="tot_tot_3"></span> su <span id="cazzeggio_3"></span></p>
+          </div>
+
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="tempo_libero_3">tempo libero</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti  justify-content-end">
+                <button id="piu_tempo_libero_3" type="button" class="mybutton" onClick="modifica_punteggio(g3, 'somma', 'tempo_libero')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_tempo_libero_3" type="button" class="mybutton" onClick="modifica_punteggio(g3, 'sottrazione', 'tempo_libero')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="salario_3">salario</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti  justify-content-end">
+                <button id="piu_salario_3" type="button" class="mybutton" onClick="modifica_punteggio(g3, 'somma', 'salario')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_salario_3" type="button" class="mybutton" onClick="modifica_punteggio(g3, 'sottrazione', 'salario')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="punteggio_3">punteggio</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_punteggio_3" type="button" class="mybutton" onClick="modifica_punteggio(g3, 'somma', 'punteggio')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_punteggio_3" type="button" class="mybutton" onClick="modifica_punteggio(g3, 'sottrazione', 'punteggio')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="persona_box">
+          <!-- header di oggetti -->
+          <div class="per_header">
+            <p>Tot Persone -&gt; <span id="tot_persone_3"></span></p>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="persona_ok_3">P. buona</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button type="button" class="mybutton" onClick="modifica_persona(g3, 'somma', 'persona_ok')"><i class="fas fa-plus-circle"></i></button>
+                <button type="button" class="mybutton" onClick="modifica_persona(g3, 'sottrazione', 'persona_ok')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="persona_no_3">P. cattiva</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button type="button" class="mybutton" onClick="modifica_persona(g3, 'somma', 'persona_no')"><i class="fas fa-plus-circle"></i></button>
+                <button type="button" class="mybutton" onClick="modifica_persona(g3, 'sottrazione', 'persona_no')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+        <!--  inizio oggetti-->
+        <div class="oggetti_box">
+
+          <!-- header di oggetti -->
+          <div class="ogg_header">
+            <p>Tot Oggetti -&gt; <span id="tot_oggetti_3"></span></p>
+          </div>
+
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="sigarette_3">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_sigarette_3" type="button" class="mybutton" onClick="modifica_oggetti(g3, 'somma', 'sigarette')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_sigarette_3" type="button" class="mybutton" onClick="modifica_oggetti(g3, 'sottrazione', 'sigarette')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="alcool_3">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_alcool_3" type="button" class="mybutton" onClick="modifica_oggetti(g3, 'somma', 'alcool')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_alcool_3" type="button" class="mybutton" onClick="modifica_oggetti(g3, 'sottrazione', 'alcool')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="cibo_3">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_cibo_3" type="button" class="mybutton" onClick="modifica_oggetti(g3, 'somma', 'cibo')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_cibo_3" type="button" class="mybutton" onClick="modifica_oggetti(g3, 'sottrazione', 'cibo')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="libri_3">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_libri_3" type="button" class="mybutton" onClick="modifica_oggetti(g3, 'somma', 'libri')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_libri_3" type="button" class="mybutton" onClick="modifica_oggetti(g3, 'sottrazione', 'libri')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="erba_3">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_erba_3" type="button" class="mybutton" onClick="modifica_oggetti(g3, 'somma', 'erba')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_erba_3" type="button" class="mybutton" onClick="modifica_oggetti(g3, 'sottrazione', 'erba')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="altro_oggetto_3">oggetti</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_altro_oggetto_3" type="button" class="mybutton" onClick="modifica_oggetti(g3, 'somma', 'altro_oggetto')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_altro_oggetto_3" type="button" class="mybutton" onClick="modifica_oggetti(g3, 'sottrazione', 'altro_oggetto')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  fine oggetti-->
+
+        <!--  inizio attivita-->
+        <div class="attivita_box">
+
+          <!-- header di attivita -->
+          <div class="att_header">
+            <p>Tot Attivita -&gt; <span id="tot_attivita_3"></span></p>
+          </div>
+
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="sonno_3">sonno</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_sonno_3" type="button" class="mybutton" onClick="modifica_attivita(g3, 'somma', 'sonno')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_sonno_3" type="button" class="mybutton" onClick="modifica_attivita(g3, 'sottrazione', 'sonno')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="tv_3">tv</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_oggetti_3" type="button" class="mybutton" onClick="modifica_attivita(g3, 'somma', 'tv')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_oggetti_3" type="button" class="mybutton" onClick="modifica_attivita(g3, 'sottrazione', 'tv')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="sveltina_3">sveltina</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_oggetti_3" type="button" class="mybutton" onClick="modifica_attivita(g3, 'somma', 'sveltina')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_oggetti_3" type="button" class="mybutton" onClick="modifica_attivita(g3, 'sottrazione', 'sveltina')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="gdr_3">GDR</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button id="piu_oggetti_3" type="button" class="mybutton" onClick="modifica_attivita(g3, 'somma', 'gdr')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button id="meno_oggetti_3" type="button" class="mybutton" onClick="modifica_attivita(g3, 'sottrazione', 'gdr')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-9">
+              <p id="altra_attivita_3">Altro</p>
+            </div>
+            <div class="col-3">
+              <div class="row pulsanti justify-content-end">
+                <button type="button" class="mybutton" onClick="modifica_attivita(g3, 'somma', 'altra_attivita')"><i
+                    class="fas fa-plus-circle"></i></button>
+                <button type="button" class="mybutton" onClick="modifica_attivita(g3, 'sottrazione', 'altra_attivita')"><i
+                    class="fas fa-minus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  fine attivita_3-->
+
+      </div>
+
+
+    </div>
+  </div>
+  <!-- /.container -->
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="js/script.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
